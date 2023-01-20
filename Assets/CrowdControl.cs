@@ -9,7 +9,7 @@ public class CrowdControl : MonoBehaviour
     GameObject[] goalLocations;
     UnityEngine.AI.NavMeshAgent agent;
     float detectionRadius = 10;
-    float fleetRadius = 20;
+    float fleeRadius = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class CrowdControl : MonoBehaviour
         if (Vector3.Distance(position, this.transform.position) < detectionRadius)
         {
             Vector3 fleeDirection = (this.transform.position - position).normalized;
-            Vector3 newgoal = this.transform.position + fleeDirection * fleetRadius;
+            Vector3 newgoal = this.transform.position + fleeDirection * fleeRadius;
             agent.SetDestination(newgoal);
         }
     }
